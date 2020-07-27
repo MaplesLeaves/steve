@@ -1,0 +1,62 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  scrollbar-face-color:#b4babf;
+  scrollbar-highlight-width:5px;
+}
+html,body {
+  margin: 0px;
+  padding: 0px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+}
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-button,scrollbar-button {
+  width: 0;
+  height: 0;
+  display: none;
+}
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track,scrollbar-track {
+  width: 15px;
+}
+
+::-webkit-scrollbar-corner,scrollbar-corner {
+  background-color: transparent;
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb ,scrollbar-thumb{
+  width: 7px;
+  background-color: #b4babf;
+  border-radius: 7px;
+}
+#root{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &>div{
+    background: #e6e6e6;
+   mini-width: 880px;
+   mini-height: 670px;
+   width: 100%;
+   height: 100%;
+   >section{
+     height: 100%;
+   }
+  }
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
