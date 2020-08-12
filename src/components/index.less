@@ -1,0 +1,77 @@
+.hiddenRow () {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 4;
+	/* autoprefixer: ignore next */
+	-webkit-box-orient: vertical;
+}
+.subject {
+	margin-bottom: 10px;
+	background: #f6f6f6;
+	box-sizing: border-box;
+	padding: 10px;
+	&:hover {
+		background: #f6f6fa;
+		cursor: pointer;
+	}
+	&:hover h3 {
+		color: #424aa9;
+	}
+	h3 {
+		text-decoration: underline;
+	}
+	> div {
+		display: flex;
+		align-items: flex-start;
+		> img {
+			height: 100px;
+			width: 150px;
+		}
+		> div {
+			width: calc(~'100% - 150px');
+			box-sizing: border-box;
+			padding-left: 15px;
+			.hiddenRow();
+		}
+	}
+}
+
+.project {
+  cursor: pointer;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.09);
+  padding: 15px 20px ;
+  &:hover{
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+	h3 {
+    font-weight: 600;
+    &:hover{
+      color: rgb(26, 104, 160);
+      text-decoration: underline
+    }
+	}
+	> .content {
+    .hiddenRow();
+    margin-bottom: 10px;
+	}
+	> ul {
+		margin: 0;
+		width: 200px;
+		display: flex;
+		justify-content: space-between;
+		> li {
+			> span {
+				margin-right: 5px;
+      }
+      >.viewBar{
+        
+        &:hover{
+          
+  
+        }
+      }
+		}
+	}
+}
