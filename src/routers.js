@@ -3,8 +3,8 @@
  * @Version: 2.0
  * @Autor: mapleLeaves
  * @Date: 2019-05-28 17:02:15
- * @LastEditors: mapleleaves
- * @LastEditTime: 2020-08-03 22:13:02
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-08-18 17:38:07
  * @weChat: 893774884
  */
 import React from 'react'
@@ -57,6 +57,13 @@ const routes = [
         component: Loadable({
           loading: Loading,
           loader: () => import('./views/aboutUs')
+        }),
+      },
+      {
+        path: '/index/message',
+        component: Loadable({
+          loading: Loading,
+          loader: () => import('./views/message')
         }),
       }
     ]
