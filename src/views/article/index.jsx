@@ -3,10 +3,10 @@
  * @Version: 2.0
  * @Autor: mapleLeaves
  * @Date: 2020-07-27 22:59:52
- * @LastEditors: mapleleaves
- * @LastEditTime: 2020-08-01 18:45:24
+ * @LastEditors:  
+ * @LastEditTime: 2020-08-20 15:46:42
  * @weChat: 893774884
- */ 
+ */
 import React, { Component } from 'react'
 import { Card } from 'antd';
 import ArtivleView from 'components/artivleView';
@@ -22,14 +22,24 @@ for (let index = 0; index < 10; index++) {
 
 }
 export default class Article extends Component {
-  render() {
+  goInfo (id) {
+    this.props.history.push({
+      pathname: "/index/articleInfo",
+        state: {
+          id
+        }
+      }
+    )
+  }
+  render () {
     return (
-      <div className='article' style={{ padding: '20px 0' }}> 
+      <div className='article pagePadd' >
         {data.map((item, index) => {
           return <Card
             hoverable
             style={{ marginBottom: '20px' }}
             key={index}
+            onClick={this.goInfo.bind(this, index)}
           >
             <ArtivleView
               title={item.title}

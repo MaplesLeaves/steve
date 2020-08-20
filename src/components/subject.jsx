@@ -4,7 +4,7 @@ export default class Subject extends Component {
   render() {
     return (
       <div className='subject'>
-        <h3>
+        <h3 onClick={this.props.goIn}>
           {this.props.data.title}
         </h3>
         <div>

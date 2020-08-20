@@ -1,8 +1,8 @@
 /*
  * @Author: your name
  * @Date: 2020-08-18 17:13:06
- * @LastEditTime: 2020-08-19 14:32:02
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-08-20 16:32:20
+ * @LastEditors:  
  * @Description: 留言板页面
  * @FilePath: \taibaoc:\Users\Lenovo\Desktop\test\steve\src\views\message\message.jsx
  */
@@ -40,7 +40,9 @@ export default class message extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      imageUrl: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2534506313,1688529724&fm=26&gp=0.jpg'
+      imageUrl: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2534506313,1688529724&fm=26&gp=0.jpg',
+      userName: '',
+      content: ''
     }
   }
   handleChange = info => {
@@ -58,8 +60,17 @@ export default class message extends Component {
       );
     }
   }
+  changeVal(e,key){
+    this.setState({
+      [key]: e.target.value
+    })
+  }
+  submit(){
+    let {userName, content} = this.state
+    console.error({content, userName})
+  }
   render() {
-    // let {imageUrl} = this.state
+    let {userName, content} = this.state
     return (
       <Row className='message'>
         <Divider orientation="left">
@@ -68,7 +79,7 @@ export default class message extends Component {
         <Col span={18}>
           <Form  {...formItemLayout}>
             <Form.Item label="姓名">
-              <Input placeholder='请输入姓名' maxLength={15}></Input>
+              <Input defaultValue={userName} onChange={e=> this.changeVal(e, 'userName')} placeholder='请输入姓名' maxLength={15}></Input>
             </Form.Item>
             {/* <Form.Item label="头像">
               <Upload
@@ -83,10 +94,10 @@ export default class message extends Component {
               </Upload>
             </Form.Item> */}
             <Form.Item label="留言">
-              <TextArea rows={4}></TextArea>
+              <TextArea rows={4} defaultValue={content} onChange={e=> this.changeVal(e, 'content')}></TextArea>
             </Form.Item>
             <Form.Item wrapperCol={{ offset: 2 }}>
-              <Button type="primary" >
+              <Button type="primary" onClick={this.submit.bind(this)}>
                 留言
                 </Button>
             </Form.Item>

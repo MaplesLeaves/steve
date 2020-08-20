@@ -1,6 +1,7 @@
 .headerTitle {
 	display: flex;
-	justify-content: space-between;
+  justify-content: space-between;
+  
 	img {
 		width: 50px;
 		height: 50px;
@@ -11,7 +12,10 @@
 			display: inline-block;
 			color: white;
 			margin-left: 20px;
-			cursor: pointer;
+      cursor: pointer;
+      &:nth-child(1){
+        margin-left: 0;
+      }
 			&:hover{
 				color: blue;
 			}
@@ -33,4 +37,7 @@
 	display: -webkit-box; //作为弹性伸缩盒子模型显示。
 	-webkit-box-orient: vertical; //设置伸缩盒子的子元素排列方式--从上到下垂直排列
 	-webkit-line-clamp: 2;
+}
+.pagePadd{
+  padding: 20px 0;
 }

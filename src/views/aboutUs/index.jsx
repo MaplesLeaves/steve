@@ -3,8 +3,8 @@
  * @Version: 2.0
  * @Autor: mapleLeaves
  * @Date: 2020-07-27 22:59:52
- * @LastEditors: mapleleaves
- * @LastEditTime: 2020-08-01 22:56:23
+ * @LastEditors:  
+ * @LastEditTime: 2020-08-20 15:44:49
  * @weChat: 893774884
  */
 import React, { Component } from 'react';
@@ -26,7 +26,7 @@ class aboutUs extends Component {
   }
   render() {
     return (
-      <div className='aboutUs'>
+      <div className='aboutUs pagePadd'>
         {
           data.map((item,index)=>{
             return <Project data={item} key={index}/>

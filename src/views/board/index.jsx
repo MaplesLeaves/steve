@@ -3,12 +3,13 @@
  * @Version: 2.0
  * @Autor: mapleLeaves
  * @Date: 2020-07-27 22:59:52
- * @LastEditors: mapleleaves
- * @LastEditTime: 2020-08-01 18:48:14
+ * @LastEditors:  
+ * @LastEditTime: 2020-08-20 16:20:10
  * @weChat: 893774884
  */ 
 import React, { Component } from 'react';
 import Subject from 'components/subject'
+// import './index.less'
 let data = []
 for (let i = 0; i < 10; i++) {
   data.push({
@@ -19,12 +20,20 @@ for (let i = 0; i < 10; i++) {
   })
 }
 class index extends Component {
+  goIn(id){
+    this.props.history.push({
+      pathname: '/index/question',
+      state: {
+        id
+      }
+    })
+  }
   render() {
     return (
-      <div>
+      <div className='pagePadd'>
         {
           data.map((item, index)=>{
-            return <Subject data={item} key={ 'icon' + item.id}/>
+            return <Subject data={item} key={ 'icon' + item.id} goIn={this.goIn.bind(this, index)} />
           })
         }
       </div>

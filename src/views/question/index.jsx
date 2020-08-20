@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { EyeFilled } from '@ant-design/icons';
-import './../index.less'
+import { EyeFilled, HeartFilled, Html5Filled } from '@ant-design/icons';
+import './index.less'
 let data = `<p><strong>一、概述</strong></p>
 <p>　　这里展示的CKEditor编辑器为4.12.1版本，官方地址为：https://ckeditor.com/</p>
 <p>　　可在其官网上下载需要的版本，还可在线定制代码高亮插件!</p>
@@ -17,31 +17,35 @@ let data = `<p><strong>一、概述</strong></p>
 <p><img alt="" src="http://tools.jb51.net/images/code_tags.png" style="width:148px" /></p>
 <p>2. 代码效果插件图标为，用法和文字加粗标签一样。感兴趣的同学可以试一下看看效果如何~</p>
 `
-export default class articleInfo extends Component {
-  componentDidMount(){
-    console.error(this.props.location.state)
+export default class index extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      isLike: false
+    }
   }
-  render() {
+
+  changeLike () {
+    this.setState({
+      isLike: true
+    })
+  }
+  render () {
+    let { isLike } = this.state
     return (
-      <div className='articleInfo'>
-        <strong className='title'>一个人的生活</strong>
-        <div className='information'>
-          <span>
-            作者：mapleLeaves
-        </span>
-          <span>
-            <EyeFilled className='viewBar' style={{ fontSize: '20px', color: 'black' }} />
-            &nbsp;120
-          </span>
-          <span>
-            2002-12-12
-          </span>
-        </div>
-        <div className='briefInfo'>
-          先帝创业未半而中道崩殂，今天下三分，益州疲弊，此诚危急存亡之秋也。然侍卫之臣不懈于内，忠志之士忘身于外者，盖追先帝之殊遇，欲报之于陛下也。诚宜开张圣听，以光先帝遗德，恢弘志士之气，不宜妄自菲薄，引喻失义，以塞忠谏之路也。
+      <div className='questionInfo'>
+        <h3 className='title'>关于es6不为人知的信息</h3>
+        <div className="userInfo">
+          <span>作者： MapleLeaves</span>
+          <span><EyeFilled /> 120</span>
+          <span>时间： 2020-12-12 12:12:12</span>
         </div>
         <div className="content" dangerouslySetInnerHTML={{__html: data}}>
-          
+        </div>
+        <div className="like">
+          喜欢就 &nbsp;
+          <HeartFilled style={{ color: !isLike ? '#e0e0e0' : 'red', fontSize: '30px' }} onClick={this.changeLike.bind(this)} />
+          &nbsp;一下吧 ~
         </div>
       </div>
     )

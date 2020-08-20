@@ -4,7 +4,7 @@
  * @Autor: mapleLeaves
  * @Date: 2019-05-28 17:02:15
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-08-18 17:38:07
+ * @LastEditTime: 2020-08-20 11:22:09
  * @weChat: 893774884
  */
 import React from 'react'
@@ -52,6 +52,14 @@ const routes = [
           loader: () => import('./views/board')
         }),
       },
+      {
+        path: '/index/question',
+        component: Loadable({
+          loading: Loading,
+          loader: () => import('./views/question')
+        }),
+      },
+      
       {
         path: '/index/aboutUs',
         component: Loadable({
